@@ -1,0 +1,15 @@
+/*Check the Score for a Salesforce Lead. Display a different image (including alt text) for each range of scores.
+
+/* Score < 10 */
+IF( Lead_Score__c < 10, IMAGE("/img/samples/stars_000.gif", "0 Star"),
+  /* Score 10-19  */ 
+  IF ((Lead_Score__c >=10 && Lead_Score__c < 20), IMAGE("/img/samples/stars_100.gif", "1 Star"), 
+  /* Score 20-29  */ 
+  IF ((Lead_Score__c >=20 && Lead_Score__c < 30), IMAGE("/img/samples/stars_200.gif", "2 Star"),
+  /* Score 30-39  */ 
+  IF ((Lead_Score__c >=30 && Lead_Score__c < 40), IMAGE("/img/samples/stars_300.gif", "3 Star"),
+  /* Score 40-49  */ 
+  IF ((Lead_Score__c >=40 && Lead_Score__c < 50), IMAGE("/img/samples/stars_400.gif", "4 Star"),
+  /* Score > 50  */ 
+  IF ((Lead_Score__c >=50), IMAGE("/img/samples/stars_500.gif", "5 Star"),
+NULL))))))
